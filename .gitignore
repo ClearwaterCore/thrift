@@ -20,6 +20,8 @@ gen-*
 .pydevproject
 .sonar
 .DS_Store
+compile
+test-driver
 
 /Makefile
 /Makefile.in
