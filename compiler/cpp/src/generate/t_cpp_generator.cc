@@ -1179,7 +1179,7 @@ void t_cpp_generator::generate_struct_reader(ofstream& out, t_struct* tstruct, b
 
   // Declare stack tmp variables
   out << endl
-      << indent() << "apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);" << endl
+      << indent() << "::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);" << endl
       << indent() << "uint32_t xfer = 0;" << endl
       << indent() << "std::string fname;" << endl
       << indent() << "::apache::thrift::protocol::TType ftype;" << endl
@@ -1303,7 +1303,7 @@ void t_cpp_generator::generate_struct_writer(ofstream& out, t_struct* tstruct, b
 
   out << indent() << "uint32_t xfer = 0;" << endl;
 
-  indent(out) << "apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);" << endl;
+  indent(out) << "::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);" << endl;
   indent(out) << "xfer += oprot->writeStructBegin(\"" << name << "\");" << endl;
 
   for (f_iter = fields.begin(); f_iter != fields.end(); ++f_iter) {
